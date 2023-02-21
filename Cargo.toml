@@ -13,3 +13,13 @@ exclude = [
   "assets",
   "tests",
   "models",
+  "examples",
+  ".gitattributes"
+]
+
+[lib]
+name = "pico_detect"
+bench = false
+
+[dependencies]
+nalgebra = { version = "0.32.1", default-feat
