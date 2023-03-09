@@ -55,4 +55,9 @@ path = "benches/lib.rs"
 name = "detect-faces"
 path = "examples/detect-faces/main.rs"
 
-# uncommen
+# uncomment for debugging
+# [profile.release]
+# debug = true
+
+[profile.bench]
+lto = true
