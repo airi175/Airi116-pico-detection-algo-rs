@@ -47,4 +47,12 @@ version = "1.5.0"
 features = ["precommit-hook", "run-cargo-clippy"]
 
 [[bench]]
-name = "pico_detect_bench
+name = "pico_detect_bench"
+harness = false
+path = "benches/lib.rs"
+
+[[example]]
+name = "detect-faces"
+path = "examples/detect-faces/main.rs"
+
+# uncommen
