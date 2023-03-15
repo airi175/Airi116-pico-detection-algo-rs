@@ -7,4 +7,7 @@ use criterion::{black_box, BenchmarkId, Criterion, Throughput};
 
 use rand::prelude::*;
 
-use pico_
+use pico_detect::{clusterize::Clusterizer, perturbate::Perturbator, Detection, Square};
+use rand_xoshiro::Xoroshiro128PlusPlus;
+
+pub fn bench_clus
