@@ -17,4 +17,9 @@ pub fn bench_clusterize(c: &mut Criterion) {
     group.sample_size(1000);
     group.measurement_time(Duration::from_secs(15));
 
-    let init = Square::
+    let init = Square::new(100, 100, 100).into();
+
+    for n in [10, 30, 50].iter() {
+        let id = BenchmarkId::from_parameter(n);
+
+        group.
