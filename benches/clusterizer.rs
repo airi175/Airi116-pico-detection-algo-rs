@@ -22,4 +22,7 @@ pub fn bench_clusterize(c: &mut Criterion) {
     for n in [10, 30, 50].iter() {
         let id = BenchmarkId::from_parameter(n);
 
-        group.
+        group.throughput(Throughput::Elements(*n as u64));
+
+        group.bench_with_input(id, &n, |b, &n| {
+            let perturbator = Perturbator::default
