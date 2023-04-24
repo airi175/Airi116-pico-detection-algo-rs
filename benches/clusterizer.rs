@@ -33,4 +33,9 @@ pub fn bench_clusterize(c: &mut Criterion) {
             let mut data = Vec::with_capacity(*n);
 
             perturbator.run(&mut rng, *n, init, |s| {
-                data.push
+                data.push(Detection::new(s.into(), 1.0));
+            });
+
+            b.iter(|| {
+                clusterizer.clusterize(
+                 
