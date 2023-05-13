@@ -41,4 +41,9 @@ pub fn bench_clusterize(c: &mut Criterion) {
                     black_box(data.to_owned()).as_mut_slice(),
                     &mut Vec::with_capacity(*n),
                 )
-            
+            });
+        });
+    }
+
+    group.finish();
+}
