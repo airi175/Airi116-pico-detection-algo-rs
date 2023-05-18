@@ -12,3 +12,8 @@ pub fn bench_load(c: &mut Criterion) {
     let model_data = fs::read(model_path!(facefinder)).unwrap();
 
     c.bench_function("Detector::load", |b| {
+        b.iter(|| Detector::load(black_box(model_data.as_slice())).unwrap())
+    });
+}
+
+pub fn benc
