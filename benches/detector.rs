@@ -16,4 +16,8 @@ pub fn bench_load(c: &mut Criterion) {
     });
 }
 
-pub fn benc
+pub fn bench_inference(c: &mut Criterion) {
+    let image = load_test_image!();
+    let detector = load_model!(facefinder);
+
+  
