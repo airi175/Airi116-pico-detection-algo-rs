@@ -5,4 +5,13 @@ extern crate criterion;
 
 use criterion::Criterion;
 
-mod clust
+mod clusterizer;
+mod detector;
+mod localizer;
+mod multiscaler;
+mod perturbator;
+mod shaper;
+
+criterion_group!(
+    name = loading;
+    
