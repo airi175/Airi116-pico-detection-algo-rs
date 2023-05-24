@@ -18,4 +18,8 @@ criterion_group!(
         .warm_up_time(Duration::from_secs(15))
         .sample_size(25)
         .noise_threshold(0.05)
-    
+        .measurement_time(Duration::from_secs(10));
+    targets =
+        detector::bench_load,
+        localizer::bench_load,
+        shaper
