@@ -20,4 +20,7 @@ pub fn bench_inference(c: &mut Criterion) {
     let image = load_test_image!();
     let detector = load_model!(facefinder);
 
-  
+    let s = Square::new(216, 208, 170);
+
+    c.bench_function("Detector::classify[inference]", |b| {
+        b.iter(|| detector.classify(b
