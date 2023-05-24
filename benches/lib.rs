@@ -14,4 +14,8 @@ mod shaper;
 
 criterion_group!(
     name = loading;
+    config = Criterion::default()
+        .warm_up_time(Duration::from_secs(15))
+        .sample_size(25)
+        .noise_threshold(0.05)
     
