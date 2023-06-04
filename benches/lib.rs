@@ -22,4 +22,10 @@ criterion_group!(
     targets =
         detector::bench_load,
         localizer::bench_load,
-        shaper
+        shaper::bench_load,
+);
+
+criterion_group!(
+    name = detection;
+    config = Criterion::default()
+        .warm_up_time(Duration::from_
