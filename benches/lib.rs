@@ -33,3 +33,11 @@ criterion_group!(
         .measurement_time(Duration::from_secs(20));
     targets =
         detector::bench_inference,
+        localizer::bench_inference,
+        shaper::bench_inference,
+);
+
+criterion_group!(
+    utils,
+    clusterizer::bench_clusterize,
+  
