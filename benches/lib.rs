@@ -28,4 +28,8 @@ criterion_group!(
 criterion_group!(
     name = detection;
     config = Criterion::default()
-        .warm_up_time(Duration::from_
+        .warm_up_time(Duration::from_secs(5))
+        .sample_size(100)
+        .measurement_time(Duration::from_secs(20));
+    targets =
+        detector::bench_inference,
