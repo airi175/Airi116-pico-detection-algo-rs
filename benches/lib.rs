@@ -40,4 +40,8 @@ criterion_group!(
 criterion_group!(
     utils,
     clusterizer::bench_clusterize,
-  
+    multiscaler::bench_run,
+    perturbator::bench_run
+);
+
+criterion_main!(loading, detection, utils);
