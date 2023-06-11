@@ -16,4 +16,8 @@ pub fn bench_load(c: &mut Criterion) {
     });
 }
 
-pub fn bench_infere
+pub fn bench_inference(c: &mut Criterion) {
+    let image = load_test_image!();
+    let localizer = load_model!(puploc);
+
+    let s = Square::new(310, 24
