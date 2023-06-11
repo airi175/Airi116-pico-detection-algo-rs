@@ -23,4 +23,6 @@ pub fn bench_inference(c: &mut Criterion) {
     let s = Square::new(310, 247, 38).into();
 
     c.bench_function("Localizer::localize[inference]", |b| {
-        b.iter(|| localizer.localiz
+        b.iter(|| localizer.localize(black_box(&image), black_box(s)));
+    });
+}
