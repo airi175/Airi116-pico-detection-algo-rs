@@ -20,4 +20,7 @@ pub fn bench_inference(c: &mut Criterion) {
     let image = load_test_image!();
     let localizer = load_model!(puploc);
 
-    let s = Square::new(310, 24
+    let s = Square::new(310, 247, 38).into();
+
+    c.bench_function("Localizer::localize[inference]", |b| {
+        b.iter(|| localizer.localiz
