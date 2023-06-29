@@ -18,4 +18,9 @@ pub fn bench_run(c: &mut Criterion) {
     let init = Square::new(100, 100, 100).into();
 
     for n in [15, 19, 23, 27, 31].iter() {
-        let id = Ben
+        let id = BenchmarkId::from_parameter(n);
+
+        group.throughput(Throughput::Elements(*n as u64));
+
+        group.bench_with_input(id, &n, |b, &n| {
+            b.iter(|| 
