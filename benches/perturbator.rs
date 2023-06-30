@@ -23,4 +23,8 @@ pub fn bench_run(c: &mut Criterion) {
         group.throughput(Throughput::Elements(*n as u64));
 
         group.bench_with_input(id, &n, |b, &n| {
-            b.iter(|| 
+            b.iter(|| {
+                perturbator.run(&mut rng, *n, init, |s| {
+                    black_box(s);
+                })
+      
