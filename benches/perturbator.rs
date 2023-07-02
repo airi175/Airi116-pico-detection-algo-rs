@@ -27,4 +27,9 @@ pub fn bench_run(c: &mut Criterion) {
                 perturbator.run(&mut rng, *n, init, |s| {
                     black_box(s);
                 })
-      
+            })
+        });
+    }
+
+    group.finish();
+}
