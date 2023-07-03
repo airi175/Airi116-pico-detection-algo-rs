@@ -12,4 +12,9 @@ pub fn bench_load(c: &mut Criterion) {
     let model_data = fs::read(model_path!(shaper)).unwrap();
 
     c.bench_function("Shaper::load", |b| {
-        b.iter(|| Shaper::l
+        b.iter(|| Shaper::load(black_box(model_data.as_slice())).unwrap())
+    });
+}
+
+pub fn bench_inference(c: &mut Criterion) {
+    let image = load_tes
