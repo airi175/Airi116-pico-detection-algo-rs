@@ -22,4 +22,7 @@ pub fn bench_inference(c: &mut Criterion) {
 
     let r = Square::new(213, 225, 153).into();
 
-    c.bench_function("
+    c.bench_function("Shaper::shape[inference]", |b| {
+        b.iter(|| shaper.shape(black_box(&image), black_box(r)));
+    });
+}
