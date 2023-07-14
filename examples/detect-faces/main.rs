@@ -16,4 +16,10 @@ use ab_glyph::FontRef;
 use anyhow::{Context, Result};
 
 use face::Face;
-use shape::Sha
+use shape::Shape5;
+use utils::{draw_face, print_faces_data};
+
+fn main() -> Result<()> {
+    let args = args::parse();
+
+    let font = FontRef::
