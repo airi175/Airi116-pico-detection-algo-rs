@@ -27,4 +27,7 @@ fn main() -> Result<()> {
 
     let image = image::open(&args.input).context("Failed to load image file.")?;
 
-    let (detector, localizer, shaper) = args.load_mode
+    let (detector, localizer, shaper) = args.load_models()?;
+    let (multiscale, localize) = args.init(&image)?;
+
+    let mut rng = Xoroshiro128PlusPlus::seed_from
