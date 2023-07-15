@@ -22,4 +22,7 @@ use utils::{draw_face, print_faces_data};
 fn main() -> Result<()> {
     let args = args::parse();
 
-    let font = FontRef::
+    let font = FontRef::try_from_slice(include_bytes!("../../assets/DejaVuSansDigits.ttf"))
+        .expect("Failed to load font.");
+
+    let image
