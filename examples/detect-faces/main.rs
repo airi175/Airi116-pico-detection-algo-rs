@@ -25,4 +25,6 @@ fn main() -> Result<()> {
     let font = FontRef::try_from_slice(include_bytes!("../../assets/DejaVuSansDigits.ttf"))
         .expect("Failed to load font.");
 
-    let image
+    let image = image::open(&args.input).context("Failed to load image file.")?;
+
+    let (detector, localizer, shaper) = args.load_mode
