@@ -30,4 +30,9 @@ fn main() -> Result<()> {
     let (detector, localizer, shaper) = args.load_models()?;
     let (multiscale, localize) = args.init(&image)?;
 
-    let mut rng = Xoroshiro128PlusPlus::seed_from
+    let mut rng = Xoroshiro128PlusPlus::seed_from_u64(42);
+
+    let gray = image.to_owned().into_luma8();
+
+    let faces: Vec<Face> = multiscale
+        .run(&detector, 
