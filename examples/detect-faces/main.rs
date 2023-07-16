@@ -35,4 +35,11 @@ fn main() -> Result<()> {
     let gray = image.to_owned().into_luma8();
 
     let faces: Vec<Face> = multiscale
-        .run(&detector, 
+        .run(&detector, &gray)
+        .iter()
+        .map(|d| {
+            let roi = *d.region();
+
+            let shape = shaper.shape(&gray, roi.into());
+
+   
