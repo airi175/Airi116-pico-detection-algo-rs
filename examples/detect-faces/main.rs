@@ -46,4 +46,8 @@ fn main() -> Result<()> {
             let left_pupil = localize.run(&localizer, &mut rng, &gray, left_eye_roi.into());
             let right_pupil = localize.run(&localizer, &mut rng, &gray, right_eye_roi.into());
 
-  
+            Face {
+                region: roi.into(),
+                shape,
+                score: d.score(),
+              
