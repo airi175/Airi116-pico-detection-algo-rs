@@ -50,4 +50,10 @@ fn main() -> Result<()> {
                 region: roi.into(),
                 shape,
                 score: d.score(),
-              
+                pupils: (left_pupil, right_pupil),
+            }
+        })
+        .collect();
+
+    if args.verbose {
+        print_faces
