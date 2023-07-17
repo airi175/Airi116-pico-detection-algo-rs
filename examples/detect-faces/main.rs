@@ -42,4 +42,5 @@ fn main() -> Result<()> {
 
             let shape = shaper.shape(&gray, roi.into());
 
-   
+            let (left_eye_roi, right_eye_roi) = Shape5::find_eyes_roi(&shape);
+            let left_pupil = localize.run(&l
