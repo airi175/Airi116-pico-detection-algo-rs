@@ -56,4 +56,10 @@ fn main() -> Result<()> {
         .collect();
 
     if args.verbose {
-        print_faces
+        print_faces_data(&faces);
+    }
+
+    let mut rgb = image.into_rgb8();
+
+    for face in faces.iter() {
+        draw_face(&mut rgb, &fac
