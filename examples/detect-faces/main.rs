@@ -62,4 +62,10 @@ fn main() -> Result<()> {
     let mut rgb = image.into_rgb8();
 
     for face in faces.iter() {
-        draw_face(&mut rgb, &fac
+        draw_face(&mut rgb, &face, &font, 12.0);
+    }
+
+    rgb.save(args.output).context("Cannot write output image")?;
+
+    Ok(())
+}
