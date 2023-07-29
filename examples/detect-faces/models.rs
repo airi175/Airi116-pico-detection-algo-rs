@@ -8,4 +8,7 @@ macro_rules! model_path {
 }
 
 #[macro_export]
-macro_rules! load
+macro_rules! load_model {
+    ($model:ident, $path:expr, $name:literal) => {
+        $model::load({
+            let file = std::fs::File::open($path)
