@@ -11,4 +11,6 @@ macro_rules! model_path {
 macro_rules! load_model {
     ($model:ident, $path:expr, $name:literal) => {
         $model::load({
-            let file = std::fs::File::open($path)
+            let file = std::fs::File::open($path).context(format!("Cannot find {} model file.", $name))?;
+            std::io::BufReader::new(file)
+        }).context(format!("Invalid {} mod
