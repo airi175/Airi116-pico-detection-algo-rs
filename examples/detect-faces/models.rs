@@ -13,4 +13,12 @@ macro_rules! load_model {
         $model::load({
             let file = std::fs::File::open($path).context(format!("Cannot find {} model file.", $name))?;
             std::io::BufReader::new(file)
-        }).context(format!("Invalid {} mod
+        }).context(format!("Invalid {} model file.", $name))?
+    }
+}
+
+#[macro_export]
+macro_rules! detector {
+    ($args:ident) => {
+        load_model!(
+          
