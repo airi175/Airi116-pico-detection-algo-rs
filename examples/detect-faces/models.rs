@@ -21,4 +21,11 @@ macro_rules! load_model {
 macro_rules! detector {
     ($args:ident) => {
         load_model!(
-          
+            Detector,
+            model_path!($args, face_finder, "face.detector.bin"),
+            "face finder"
+        )
+    };
+}
+
+#[ma
