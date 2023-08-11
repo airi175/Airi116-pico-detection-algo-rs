@@ -28,4 +28,9 @@ macro_rules! detector {
     };
 }
 
-#[ma
+#[macro_export]
+macro_rules! shaper {
+    ($args:ident) => {
+        load_model!(
+            Shaper,
+            model_pat
