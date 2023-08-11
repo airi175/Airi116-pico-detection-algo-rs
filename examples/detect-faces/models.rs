@@ -33,4 +33,11 @@ macro_rules! shaper {
     ($args:ident) => {
         load_model!(
             Shaper,
-            model_pat
+            model_path!($args, face_shaper, "face-5.shaper.bin"),
+            "face shaper"
+        )
+    };
+}
+
+#[macro_export]
+macro_rules! localizer
