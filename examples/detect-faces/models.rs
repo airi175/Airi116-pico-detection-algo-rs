@@ -40,4 +40,8 @@ macro_rules! shaper {
 }
 
 #[macro_export]
-macro_rules! localizer
+macro_rules! localizer {
+    ($args:ident) => {
+        load_model!(
+            Localizer,
+            model_path!($args, pupil_localizer, "pupil.loca
