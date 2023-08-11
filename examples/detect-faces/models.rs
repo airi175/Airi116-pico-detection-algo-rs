@@ -44,4 +44,12 @@ macro_rules! localizer {
     ($args:ident) => {
         load_model!(
             Localizer,
-            model_path!($args, pupil_localizer, "pupil.loca
+            model_path!($args, pupil_localizer, "pupil.localizer.bin"),
+            "pupil localizer"
+        )
+    };
+}
+
+pub fn model_path<T: Into<PathBuf>>(
+    input: Option<&PathBuf>,
+    dir: Option<&PathBuf>
