@@ -52,4 +52,8 @@ macro_rules! localizer {
 
 pub fn model_path<T: Into<PathBuf>>(
     input: Option<&PathBuf>,
-    dir: Option<&PathBuf>
+    dir: Option<&PathBuf>,
+    default: T,
+) -> PathBuf {
+    let path = input.map(|p| p.to_owned()).unwrap_or(default.into());
+    if path.to_owned()
