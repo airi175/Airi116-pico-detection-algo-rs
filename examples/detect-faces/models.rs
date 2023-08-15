@@ -56,4 +56,10 @@ pub fn model_path<T: Into<PathBuf>>(
     default: T,
 ) -> PathBuf {
     let path = input.map(|p| p.to_owned()).unwrap_or(default.into());
-    if path.to_owned()
+    if path.to_owned().is_absolute() {
+        path
+    } else {
+        match dir {
+            Some(p) => p.join(path),
+            None => path,
+ 
