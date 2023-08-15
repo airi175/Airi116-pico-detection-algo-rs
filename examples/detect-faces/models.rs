@@ -62,4 +62,6 @@ pub fn model_path<T: Into<PathBuf>>(
         match dir {
             Some(p) => p.join(path),
             None => path,
- 
+        }
+    }
+}
