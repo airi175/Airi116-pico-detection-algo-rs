@@ -57,3 +57,21 @@ fn main() -> Result<()> {
             if let Some(score) = detector.classify(&image, square) {
                 println!("{}", score);
             }
+        }
+        ModelType::Localizer => {
+            let localizer = Localizer::load(file)?;
+            let point = localizer.localize(&image, square.into());
+            println!("{},{}", point.x as i32, point.y as i32);
+        }
+        ModelType::Shaper => {
+            let shaper = Shaper::load(file)?;
+            let shape = shaper.shape(&image, square.into());
+            println!("i,x,y");
+            for (i, point) in shape.iter().enumerate() {
+                println!("{},{},{}", i, point.x as i32, point.y as i32);
+            }
+        }
+    }
+
+    Ok(())
+}
