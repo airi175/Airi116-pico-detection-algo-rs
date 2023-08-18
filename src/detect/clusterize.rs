@@ -14,3 +14,11 @@ pub struct Clusterizer {
 impl Clusterizer {
     #[inline]
     pub fn intersection_threshold(self, value: f32) -> Self {
+        Self {
+            intersection_threshold: value,
+            ..self
+        }
+    }
+
+    #[inline]
+    pub fn score_threshold(sel
