@@ -21,4 +21,12 @@ impl Clusterizer {
     }
 
     #[inline]
-    pub fn score_threshold(sel
+    pub fn score_threshold(self, value: f32) -> Self {
+        Self {
+            score_threshold: value,
+            ..self
+        }
+    }
+
+    #[inline]
+    pub fn clusterize(&self, 
