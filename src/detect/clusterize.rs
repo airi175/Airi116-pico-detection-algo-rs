@@ -29,4 +29,8 @@ impl Clusterizer {
     }
 
     #[inline]
-    pub fn clusterize(&self, 
+    pub fn clusterize(&self, data: &mut [Detection<Square>], dest: &mut Vec<Detection<Target>>) {
+        clusterize(
+            data,
+            self.intersection_threshold,
+       
