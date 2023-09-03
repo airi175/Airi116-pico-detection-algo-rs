@@ -33,4 +33,12 @@ impl Clusterizer {
         clusterize(
             data,
             self.intersection_threshold,
-       
+            self.score_threshold,
+            dest,
+        );
+    }
+}
+
+impl Default for Clusterizer {
+    #[inline]
+    fn default() ->
