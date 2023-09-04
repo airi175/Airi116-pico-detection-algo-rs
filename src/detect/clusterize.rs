@@ -41,4 +41,13 @@ impl Clusterizer {
 
 impl Default for Clusterizer {
     #[inline]
-    fn default() ->
+    fn default() -> Self {
+        Self {
+            intersection_threshold: 0.7,
+            score_threshold: 0.0,
+        }
+    }
+}
+
+#[inline]
+pub fn clusterize<R: Region
