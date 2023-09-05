@@ -50,4 +50,9 @@ impl Default for Clusterizer {
 }
 
 #[inline]
-pub fn clusterize<R: Region
+pub fn clusterize<R: Region + Copy>(
+    data: &mut [Detection<R>],
+    intersection_threshold: f32,
+    score_threshold: f32,
+    dest: &mut Vec<Detection<Target>>,
+) {
