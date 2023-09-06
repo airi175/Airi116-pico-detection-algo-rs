@@ -61,4 +61,10 @@ pub fn clusterize<R: Region + Copy>(
     let mut assignments = vec![false; data.len()];
 
     for (i, det1) in data.iter().enumerate() {
-        if
+        if assignments[i] {
+            continue;
+        } else {
+            assignments[i] = true;
+        }
+
+        let mut point = det1.region.
