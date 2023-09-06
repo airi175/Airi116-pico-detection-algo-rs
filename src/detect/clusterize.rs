@@ -73,4 +73,5 @@ pub fn clusterize<R: Region + Copy>(
         let mut score = det1.score;
         let mut count: usize = 1;
 
-      
+        for (det2, j) in data[(i + 1)..].iter().zip((i + 1)..) {
+            if let Some(value) = intersection_over_union(det1.region, 
