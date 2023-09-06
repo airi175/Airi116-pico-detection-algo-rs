@@ -56,3 +56,9 @@ pub fn clusterize<R: Region + Copy>(
     score_threshold: f32,
     dest: &mut Vec<Detection<Target>>,
 ) {
+    data.sort_by(|a, b| b.partial_cmp(a).unwrap());
+
+    let mut assignments = vec![false; data.len()];
+
+    for (i, det1) in data.iter().enumerate() {
+        if
