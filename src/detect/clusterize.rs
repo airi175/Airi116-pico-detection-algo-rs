@@ -67,4 +67,10 @@ pub fn clusterize<R: Region + Copy>(
             assignments[i] = true;
         }
 
-        let mut point = det1.region.
+        let mut point = det1.region.top_left();
+        let mut size = det1.region.width();
+
+        let mut score = det1.score;
+        let mut count: usize = 1;
+
+      
