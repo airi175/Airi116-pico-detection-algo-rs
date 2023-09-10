@@ -78,4 +78,7 @@ pub fn clusterize<R: Region + Copy>(
                 if value > intersection_threshold {
                     assignments[j] = true;
 
-                 
+                    point += det2.region.top_left().coords;
+                    size += det2.region.width();
+
+                    score +=
