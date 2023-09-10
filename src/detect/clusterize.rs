@@ -81,4 +81,11 @@ pub fn clusterize<R: Region + Copy>(
                     point += det2.region.top_left().coords;
                     size += det2.region.width();
 
-                    score +=
+                    score += det2.score * value;
+                    count += 1;
+                }
+            }
+        }
+
+        if score > score_threshold {
+            let scale = (cou
