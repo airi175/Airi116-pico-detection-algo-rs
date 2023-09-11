@@ -98,4 +98,9 @@ pub fn clusterize<R: Region + Copy>(
             point.coords.add_scalar_mut(size / 2.0);
 
             dest.push(Detection {
-                region: Target { p
+                region: Target { point, size },
+                score,
+            });
+        }
+    }
+}
