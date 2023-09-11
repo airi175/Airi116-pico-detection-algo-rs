@@ -88,4 +88,10 @@ pub fn clusterize<R: Region + Copy>(
         }
 
         if score > score_threshold {
-            let scale = (cou
+            let scale = (count as f32).recip();
+
+            let size = (size as f32) * scale;
+
+            let mut point: Point2<f32> = point.cast();
+
+            point.coords.
