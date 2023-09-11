@@ -94,4 +94,8 @@ pub fn clusterize<R: Region + Copy>(
 
             let mut point: Point2<f32> = point.cast();
 
-            point.coords.
+            point.coords.scale_mut(scale);
+            point.coords.add_scalar_mut(size / 2.0);
+
+            dest.push(Detection {
+                region: Target { p
