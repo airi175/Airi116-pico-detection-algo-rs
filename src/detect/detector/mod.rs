@@ -18,4 +18,9 @@ pub struct Detector {
     depth: usize,
     dsize: usize,
     threshold: f32,
-    forest: Vec<Dete
+    forest: Vec<DetectorTree>,
+}
+
+impl Debug for Detector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+       
