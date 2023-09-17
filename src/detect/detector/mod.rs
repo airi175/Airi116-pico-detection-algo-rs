@@ -12,4 +12,10 @@ use super::Detection;
 
 use tree::DetectorTree;
 
-/// Implements object detection using a cascade of decision tree classif
+/// Implements object detection using a cascade of decision tree classifiers.
+#[derive(Clone)]
+pub struct Detector {
+    depth: usize,
+    dsize: usize,
+    threshold: f32,
+    forest: Vec<Dete
