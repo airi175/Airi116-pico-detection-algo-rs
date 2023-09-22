@@ -23,4 +23,7 @@ pub struct Detector {
 
 impl Debug for Detector {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-       
+        f.debug_struct(stringify!(Detector))
+            .field("depth", &self.depth)
+            .field("dsize", &self.dsize)
+            .field("thres
