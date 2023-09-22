@@ -37,4 +37,9 @@ impl Detector {
     ///
     /// ### Arguments
     ///
-    /// * `image` -- target
+    /// * `image` -- target image;
+    ///
+    /// ### Returns
+    ///
+    /// * `Some(f32)` passed region is an object with score;
+    /// *
