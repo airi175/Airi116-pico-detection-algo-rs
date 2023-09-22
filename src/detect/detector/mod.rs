@@ -32,4 +32,9 @@ impl Debug for Detector {
     }
 }
 
-impl Detecto
+impl Detector {
+    /// Estimate detection score for the rectangular region.
+    ///
+    /// ### Arguments
+    ///
+    /// * `image` -- target
