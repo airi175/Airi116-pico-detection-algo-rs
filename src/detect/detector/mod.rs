@@ -26,4 +26,10 @@ impl Debug for Detector {
         f.debug_struct(stringify!(Detector))
             .field("depth", &self.depth)
             .field("dsize", &self.dsize)
-            .field("thres
+            .field("threshold", &self.threshold)
+            .field("trees", &self.forest.len())
+            .finish()
+    }
+}
+
+impl Detecto
