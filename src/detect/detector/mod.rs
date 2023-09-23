@@ -42,4 +42,6 @@ impl Detector {
     /// ### Returns
     ///
     /// * `Some(f32)` passed region is an object with score;
-    /// *
+    /// * `None` -- if passed region is not an object.
+    #[inline]
+    pub fn classify<I>(&self, image: &I, region: Square) -> Option<f
