@@ -44,4 +44,11 @@ impl Detector {
     /// * `Some(f32)` passed region is an object with score;
     /// * `None` -- if passed region is not an object.
     #[inline]
-    pub fn classify<I>(&self, image: &I, region: Square) -> Option<f
+    pub fn classify<I>(&self, image: &I, region: Square) -> Option<f32>
+    where
+        I: GenericImageView<Pixel = Luma<u8>>,
+    {
+        let mut result = 0.0f32;
+        let point = region.center();
+
+        for tr
