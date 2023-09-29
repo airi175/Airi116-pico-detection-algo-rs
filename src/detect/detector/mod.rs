@@ -56,4 +56,9 @@ impl Detector {
                 2 * idx + !tree.nodes[idx].bintest(image, point, region.size()) as usize
             });
             let lutidx = idx - self.dsize;
-        
+            result += tree.predictions[lutidx];
+
+            if result < tree.threshold {
+                return None;
+            }
+   
