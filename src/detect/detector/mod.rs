@@ -53,4 +53,7 @@ impl Detector {
 
         for tree in self.forest.iter() {
             let idx = (0..self.depth).fold(1, |idx, _| {
-                2 * idx + !t
+                2 * idx + !tree.nodes[idx].bintest(image, point, region.size()) as usize
+            });
+            let lutidx = idx - self.dsize;
+        
