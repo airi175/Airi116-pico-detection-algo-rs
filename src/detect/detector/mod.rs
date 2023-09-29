@@ -51,4 +51,6 @@ impl Detector {
         let mut result = 0.0f32;
         let point = region.center();
 
-        for tr
+        for tree in self.forest.iter() {
+            let idx = (0..self.depth).fold(1, |idx, _| {
+                2 * idx + !t
