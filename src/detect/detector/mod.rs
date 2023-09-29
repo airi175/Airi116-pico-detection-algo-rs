@@ -61,4 +61,9 @@ impl Detector {
             if result < tree.threshold {
                 return None;
             }
-   
+        }
+        Some(result - self.threshold)
+    }
+
+    #[inline]
+    pub fn detect<I>(&self, image: &I, region: Square) -> Option<Dete
