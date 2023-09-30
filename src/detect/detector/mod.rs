@@ -66,4 +66,9 @@ impl Detector {
     }
 
     #[inline]
-    pub fn detect<I>(&self, image: &I, region: Square) -> Option<Dete
+    pub fn detect<I>(&self, image: &I, region: Square) -> Option<Detection<Square>>
+    where
+        I: GenericImageView<Pixel = Luma<u8>>,
+    {
+        self.classify(image, region)
+            .map(
