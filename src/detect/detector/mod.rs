@@ -82,4 +82,7 @@ impl Detector {
         readable.read_exact(&mut [0; 8])?;
 
         readable.read_exact(&mut buffer)?;
-        let depth = i32::from_le_bytes(
+        let depth = i32::from_le_bytes(buffer) as usize;
+
+        let tree_size: usize = match 2usize.checked_pow(depth as u32) {
+            Som
