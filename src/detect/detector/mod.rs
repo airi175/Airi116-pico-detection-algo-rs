@@ -79,4 +79,7 @@ impl Detector {
     pub fn load(mut readable: impl Read) -> Result<Self, Error> {
         let mut buffer: [u8; 4] = [0u8; 4];
         // skip first 8 bytes;
-     
+        readable.read_exact(&mut [0; 8])?;
+
+        readable.read_exact(&mut buffer)?;
+        let depth = i32::from_le_bytes(
