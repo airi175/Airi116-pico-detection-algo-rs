@@ -76,4 +76,7 @@ impl Detector {
 
     /// Create a detector object from a readable source.
     #[inline]
-    pub fn lo
+    pub fn load(mut readable: impl Read) -> Result<Self, Error> {
+        let mut buffer: [u8; 4] = [0u8; 4];
+        // skip first 8 bytes;
+     
