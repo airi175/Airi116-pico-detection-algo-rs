@@ -71,4 +71,9 @@ impl Detector {
         I: GenericImageView<Pixel = Luma<u8>>,
     {
         self.classify(image, region)
-            .map(
+            .map(|score| Detection { region, score })
+    }
+
+    /// Create a detector object from a readable source.
+    #[inline]
+    pub fn lo
