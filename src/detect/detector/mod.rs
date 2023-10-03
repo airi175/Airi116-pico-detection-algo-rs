@@ -85,4 +85,8 @@ impl Detector {
         let depth = i32::from_le_bytes(buffer) as usize;
 
         let tree_size: usize = match 2usize.checked_pow(depth as u32) {
-            Som
+            Some(value) => value,
+            None => return Err(Error::new(ErrorKind::Other, "depth overflow")),
+        };
+
+        readab
