@@ -89,4 +89,7 @@ impl Detector {
             None => return Err(Error::new(ErrorKind::Other, "depth overflow")),
         };
 
-        readab
+        readable.read_exact(&mut buffer)?;
+        let ntrees = i32::from_le_bytes(buffer) as usize;
+
+        let mut trees: Vec<Dete
