@@ -96,4 +96,9 @@ impl Detector {
 
         for _ in 0..ntrees {
             trees.push(DetectorTree::load(&mut readable, tree_size)?);
-   
+        }
+
+        let threshold = trees
+            .last()
+            .ok_or(Error::new(ErrorKind::Other, "No trees"))?
+            .threshold;
