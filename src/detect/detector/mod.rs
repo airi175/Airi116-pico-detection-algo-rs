@@ -92,4 +92,8 @@ impl Detector {
         readable.read_exact(&mut buffer)?;
         let ntrees = i32::from_le_bytes(buffer) as usize;
 
-        let mut trees: Vec<Dete
+        let mut trees: Vec<DetectorTree> = Vec::with_capacity(ntrees);
+
+        for _ in 0..ntrees {
+            trees.push(DetectorTree::load(&mut readable, tree_size)?);
+   
