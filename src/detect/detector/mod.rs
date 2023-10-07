@@ -102,3 +102,14 @@ impl Detector {
             .last()
             .ok_or(Error::new(ErrorKind::Other, "No trees"))?
             .threshold;
+
+        Ok(Self {
+            depth,
+            dsize: tree_size,
+            forest: trees,
+            threshold,
+        })
+    }
+}
+
+#[c
