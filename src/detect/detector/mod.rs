@@ -112,4 +112,11 @@ impl Detector {
     }
 }
 
-#[c
+#[cfg(test)]
+mod tests {
+    use crate::nodes::ComparisonNode;
+
+    use super::*;
+
+    #[test]
+    fn test_face_detector_model_loadin
