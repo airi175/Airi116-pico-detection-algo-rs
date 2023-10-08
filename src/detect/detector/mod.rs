@@ -119,4 +119,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_face_detector_model_loadin
+    fn test_face_detector_model_loading() {
+        let facefinder = dbg!(Detector::load(
+            include_bytes!("../../../models/face.detector.bin")
+              
