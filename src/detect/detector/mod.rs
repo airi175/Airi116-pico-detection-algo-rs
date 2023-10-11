@@ -122,4 +122,10 @@ mod tests {
     fn test_face_detector_model_loading() {
         let facefinder = dbg!(Detector::load(
             include_bytes!("../../../models/face.detector.bin")
-              
+                .to_vec()
+                .as_slice(),
+        )
+        .expect("parsing failed"));
+
+        // for tree in facefinder.forest.iter() {
+        //
