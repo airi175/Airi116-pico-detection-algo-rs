@@ -138,4 +138,8 @@ mod tests {
         let last_node = ComparisonNode::from([-26i8, -84i8, -48i8, 0i8]);
         assert_eq!(second_node, facefinder.forest[0].nodes[1]);
         assert_eq!(
-            l
+            last_node,
+            *facefinder.forest.last().unwrap().nodes.last().unwrap(),
+        );
+
+        assert_abs_diff_eq!(facefinde
