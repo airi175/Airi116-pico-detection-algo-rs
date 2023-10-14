@@ -132,4 +132,7 @@ mod tests {
         // }
 
         assert_eq!(6, facefinder.depth);
-        assert_eq!(468, facefinder
+        assert_eq!(468, facefinder.forest.len());
+
+        let second_node = ComparisonNode::from([-17i8, 36i8, -55i8, 7i8]);
+        let last_node = ComparisonNode::from([-26i8, 
