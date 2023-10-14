@@ -128,4 +128,8 @@ mod tests {
         .expect("parsing failed"));
 
         // for tree in facefinder.forest.iter() {
-        //
+        //     println!("{:?}", tree);
+        // }
+
+        assert_eq!(6, facefinder.depth);
+        assert_eq!(468, facefinder
