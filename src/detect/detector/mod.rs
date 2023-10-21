@@ -142,4 +142,6 @@ mod tests {
             *facefinder.forest.last().unwrap().nodes.last().unwrap(),
         );
 
-        assert_abs_diff_eq!(facefinde
+        assert_abs_diff_eq!(facefinder.forest[0].threshold, -0.7550662159919739f32);
+        assert_abs_diff_eq!(
+            facefinder.forest.last().unwrap()
