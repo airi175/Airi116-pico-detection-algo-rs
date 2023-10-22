@@ -148,4 +148,8 @@ mod tests {
             -1.9176125526428223f32
         );
 
-        assert_abs_diff_eq!(facefinder.forest[0].predict
+        assert_abs_diff_eq!(facefinder.forest[0].predictions[0], -0.7820115089416504f32);
+        assert_abs_diff_eq!(
+            *facefinder
+                .forest
+                .last()
