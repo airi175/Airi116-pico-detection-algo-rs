@@ -157,4 +157,7 @@ mod tests {
                 .predictions
                 .last()
                 .unwrap(),
-            0.07058460
+            0.07058460265398026f32
+        );
+    }
+}
