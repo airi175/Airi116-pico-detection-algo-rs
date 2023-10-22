@@ -153,3 +153,8 @@ mod tests {
             *facefinder
                 .forest
                 .last()
+                .unwrap()
+                .predictions
+                .last()
+                .unwrap(),
+            0.07058460
