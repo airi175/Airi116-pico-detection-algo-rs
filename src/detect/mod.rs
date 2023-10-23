@@ -15,4 +15,9 @@ use multiscale::Multiscaler;
 
 pub use detection::Detection;
 pub use detector::Detector;
-pub u
+pub use padding::Padding;
+
+#[derive(Debug, Clone, Copy, Builder)]
+#[builder]
+pub struct DetectMultiscale {
+    pub multiscaler: Multisc
