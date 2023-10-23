@@ -8,4 +8,11 @@ pub mod multiscale;
 use image::{GenericImageView, Luma};
 use derive_builder::Builder;
 
-use crate::geome
+use crate::geometry::Target;
+
+use clusterize::Clusterizer;
+use multiscale::Multiscaler;
+
+pub use detection::Detection;
+pub use detector::Detector;
+pub u
