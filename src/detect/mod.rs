@@ -20,4 +20,11 @@ pub use padding::Padding;
 #[derive(Debug, Clone, Copy, Builder)]
 #[builder]
 pub struct DetectMultiscale {
-    pub multiscaler: Multisc
+    pub multiscaler: Multiscaler,
+    #[builder(default)]
+    pub clusterizer: Clusterizer,
+    #[builder(default)]
+    pub padding: Padding,
+}
+
+impl DetectMultiscale {
