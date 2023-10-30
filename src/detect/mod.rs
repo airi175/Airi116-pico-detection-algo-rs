@@ -28,3 +28,10 @@ pub struct DetectMultiscale {
 }
 
 impl DetectMultiscale {
+    #[inline]
+    pub fn builder() -> DetectMultiscaleBuilder {
+        Default::default()
+    }
+
+    #[inline]
+   
