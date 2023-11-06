@@ -40,4 +40,6 @@ impl DetectMultiscale {
     {
         let mut detections = Vec::new();
         
-        self.multiscaler.run(self.padding.im
+        self.multiscaler.run(self.padding.image_rect(image), |region| {
+            if let Some(detection) = detector.detect(image, region) {
+                
