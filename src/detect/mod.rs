@@ -36,4 +36,8 @@ impl DetectMultiscale {
     #[inline]
     pub fn run<I>(&self, detector: &Detector, image: &I) -> Vec<Detection<Target>>
     where
-        I: GenericImageView<Pixel = Luma<
+        I: GenericImageView<Pixel = Luma<u8>>,
+    {
+        let mut detections = Vec::new();
+        
+        self.multiscaler.run(self.padding.im
