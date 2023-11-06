@@ -34,4 +34,6 @@ impl DetectMultiscale {
     }
 
     #[inline]
-   
+    pub fn run<I>(&self, detector: &Detector, image: &I) -> Vec<Detection<Target>>
+    where
+        I: GenericImageView<Pixel = Luma<
