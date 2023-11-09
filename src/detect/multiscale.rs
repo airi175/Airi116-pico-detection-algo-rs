@@ -77,3 +77,73 @@ impl Multiscaler {
     where
         F: FnMut(Square),
     {
+        multiscale(
+            self.min_size,
+            self.max_size,
+            self.shift_factor,
+            self.scale_factor,
+            rect,
+            f,
+        )
+    }
+
+    #[inline]
+    pub fn count(&self, rect: Rect) -> usize {
+        let mut count = 0;
+        self.run(rect, |_| count += 1);
+        count
+    }
+
+    #[inline]
+    pub fn collect(&self, rect: Rect) -> Vec<Square> {
+        let mut result = Vec::with_capacity(self.count(rect));
+        self.run(rect, |s| result.push(s));
+        result
+    }
+}
+
+#[inline]
+pub fn multiscale<F>(
+    min_size: u32,
+    max_size: u32,
+    shift_factor: f32,
+    scale_factor: f32,
+    rect: Rect,
+    mut f: F,
+) where
+    F: FnMut(Square),
+{
+    let mut size = min_size;
+
+    let start_x = rect.left();
+    let start_y = rect.top();
+
+    let right = start_x + rect.width() as i32;
+    let bottom = start_y + rect.height() as i32;
+
+    while size <= max_size {
+        let sizef = size as f32;
+        let step: usize = 1.max((sizef * shift_factor) as usize);
+
+        let end_x = right - size as i32;
+        let end_y = bottom - size as i32;
+
+        for y in (start_y..=end_y).step_by(step) {
+            for x in (start_x..=end_x).step_by(step) {
+                f(Square::new(x, y, size))
+            }
+        }
+        size = (sizef * scale_factor) as u32;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_multiscale_run() {
+        let ms = Multiscaler::new(1, 4, 1.0, 2.0).unwrap();
+        ms.run(Rect::at(0, 0).of_size(4, 4), |s| println!("{:?}", s));
+    }
+}
