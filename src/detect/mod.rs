@@ -48,4 +48,8 @@ impl DetectMultiscale {
 
         let mut clusters = Vec::new();
 
-        self.clusterizer.clusterize(&mut detect
+        self.clusterizer.clusterize(&mut detections, &mut clusters);
+
+        clusters
+    }
+}
