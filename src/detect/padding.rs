@@ -12,4 +12,13 @@ pub struct Padding {
 impl Padding {
     #[inline]
     pub fn new(top: i32, right: i32, bottom: i32, left: i32) -> Self {
-        Se
+        Self {
+            top,
+            right,
+            bottom,
+            left,
+        }
+    }
+
+    #[inline]
+    pub fn top
