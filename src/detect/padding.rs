@@ -21,4 +21,9 @@ impl Padding {
     }
 
     #[inline]
-    pub fn top
+    pub fn top(self, value: i32) -> Self {
+        Self { top: value, ..self }
+    }
+
+    #[inline]
+    pub fn right(self, value: i32) -> S
