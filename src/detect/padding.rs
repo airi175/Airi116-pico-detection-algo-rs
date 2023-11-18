@@ -44,3 +44,11 @@ impl Padding {
     pub fn vertical(self, value: i32) -> Self {
         Self { top: value, bottom: value, ..self }
     }
+
+    #[inline]
+    pub fn horizontal(self, value: i32) -> Self {
+        Self { right: value, left: value, ..self }
+    }
+
+    #[inline]
+    pub fn 
