@@ -51,4 +51,9 @@ impl Padding {
     }
 
     #[inline]
-    pub fn 
+    pub fn left(self, value: i32) -> Self {
+        Self { left: value, ..self }
+    }
+
+    #[inline]
+    pub fn rect(self, width: u32, height: u3
