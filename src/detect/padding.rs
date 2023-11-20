@@ -56,4 +56,7 @@ impl Padding {
     }
 
     #[inline]
-    pub fn rect(self, width: u32, height: u3
+    pub fn rect(self, width: u32, height: u32) -> Rect {
+        let w = (width as i32) - self.right - self.left;
+        let h = (height as i32) - self.bottom - self.top;
+        Rec
