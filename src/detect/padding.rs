@@ -59,4 +59,8 @@ impl Padding {
     pub fn rect(self, width: u32, height: u32) -> Rect {
         let w = (width as i32) - self.right - self.left;
         let h = (height as i32) - self.bottom - self.top;
-        Rec
+        Rect::at(self.left, self.top).of_size(w as u32, h as u32)
+    }
+
+    #[inline]
+    pub fn image_rect<I: GenericImageView>(self, image: &I) -> Rect
