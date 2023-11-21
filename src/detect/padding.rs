@@ -63,4 +63,7 @@ impl Padding {
     }
 
     #[inline]
-    pub fn image_rect<I: GenericImageView>(self, image: &I) -> Rect
+    pub fn image_rect<I: GenericImageView>(self, image: &I) -> Rect {
+        self.rect(image.width(), image.height())
+    }
+}
