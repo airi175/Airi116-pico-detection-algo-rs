@@ -19,4 +19,14 @@ pub fn intersection_over_union<R: Region>(r1: R, r2: R) -> Option<f32> {
     let inter_square = width * height;
     let union_square = (r1.square() + r2.square()) - inter_square;
 
-    Some(inter_square as f32 / un
+    Some(inter_square as f32 / union_square as f32)
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::geometry::Square;
+
+    use super::*;
+
+    #[test]
+    fn test_intersection_ove
