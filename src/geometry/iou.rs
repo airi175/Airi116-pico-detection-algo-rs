@@ -14,4 +14,9 @@ pub fn intersection_over_union<R: Region>(r1: R, r2: R) -> Option<f32> {
     }
 
     let width = (right - left) as u32 + 1;
-    let height = (bottom - top)
+    let height = (bottom - top) as u32 + 1;
+
+    let inter_square = width * height;
+    let union_square = (r1.square() + r2.square()) - inter_square;
+
+    Some(inter_square as f32 / un
