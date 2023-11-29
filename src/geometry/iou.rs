@@ -38,4 +38,8 @@ mod tests {
             ),
             (
                 Square::at(0, 0).of_size(2),
-                
+                Square::at(1, 1).of_size(2),
+                Some(1.0 / (2 * 2 * 2 - 1) as f32),
+            ),
+            (
+        
