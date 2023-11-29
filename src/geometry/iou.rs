@@ -33,4 +33,9 @@ mod tests {
         let tests: Vec<(Square, Square, Option<f32>)> = vec![
             (
                 Square::at(0, 0).of_size(1),
-         
+                Square::at(0, 0).of_size(1),
+                Some(1.0),
+            ),
+            (
+                Square::at(0, 0).of_size(2),
+                
