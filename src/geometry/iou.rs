@@ -29,4 +29,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_intersection_ove
+    fn test_intersection_over_union() {
+        let tests: Vec<(Square, Square, Option<f32>)> = vec![
+            (
+                Square::at(0, 0).of_size(1),
+         
