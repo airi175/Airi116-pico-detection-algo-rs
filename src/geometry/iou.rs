@@ -52,4 +52,9 @@ mod tests {
                 None,
             ),
             (
-              
+                Square::at(0, 0).of_size(1),
+                Square::at(1, 0).of_size(1),
+                None,
+            ),
+            (
+   
