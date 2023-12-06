@@ -68,4 +68,8 @@ mod tests {
             assert!(
                 calc_iou.is_none() && test_iou.is_none()
                     || calc_iou.is_some() && test_iou.is_some()
- 
+            );
+
+            if let Some((calc, test)) = calc_iou.zip(*test_iou) {
+                assert_abs_diff_eq!(calc, test);
+        
