@@ -61,4 +61,7 @@ mod tests {
                 Square::at(0, 1).of_size(1),
                 None,
             ),
-      
+        ];
+
+        for (r1, r2, test_iou) in tests.iter() {
+            let calc_iou = intersection_over_uni
