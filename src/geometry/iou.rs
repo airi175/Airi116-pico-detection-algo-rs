@@ -64,4 +64,8 @@ mod tests {
         ];
 
         for (r1, r2, test_iou) in tests.iter() {
-            let calc_iou = intersection_over_uni
+            let calc_iou = intersection_over_union(*r1, *r2);
+            assert!(
+                calc_iou.is_none() && test_iou.is_none()
+                    || calc_iou.is_some() && test_iou.is_some()
+ 
