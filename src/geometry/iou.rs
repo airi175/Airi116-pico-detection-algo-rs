@@ -72,4 +72,7 @@ mod tests {
 
             if let Some((calc, test)) = calc_iou.zip(*test_iou) {
                 assert_abs_diff_eq!(calc, test);
-        
+            };
+        }
+    }
+}
