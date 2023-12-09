@@ -6,4 +6,12 @@ use crate::traits::Region;
 use super::Square;
 
 #[derive(Debug, Clone, Copy, PartialEq)]
-pub
+pub struct Target {
+    pub(crate) point: Point2<f32>,
+    pub(crate) size: f32,
+}
+
+impl Target {
+    #[inline]
+    pub fn new(x: f32, y: f32, s: f32) -> Self {
+  
