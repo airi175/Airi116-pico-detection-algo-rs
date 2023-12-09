@@ -14,4 +14,11 @@ pub struct Target {
 impl Target {
     #[inline]
     pub fn new(x: f32, y: f32, s: f32) -> Self {
-  
+        Self {
+            point: Point2::new(x, y),
+            size: s,
+        }
+    }
+
+    #[inline]
+    pub fn size(&self) -> f32 {
