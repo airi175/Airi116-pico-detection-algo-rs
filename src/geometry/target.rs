@@ -32,4 +32,13 @@ impl Target {
 
     #[inline]
     pub fn y(&self) -> f32 {
-  
+        self.point.y
+    }
+
+    #[inline]
+    pub fn point(&self) -> &Point2<f32> {
+        &self.point
+    }
+}
+
+impl Region for Target {
