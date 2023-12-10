@@ -22,3 +22,14 @@ impl Target {
 
     #[inline]
     pub fn size(&self) -> f32 {
+        self.size
+    }
+
+    #[inline]
+    pub fn x(&self) -> f32 {
+        self.point.x
+    }
+
+    #[inline]
+    pub fn y(&self) -> f32 {
+  
