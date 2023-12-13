@@ -42,3 +42,10 @@ impl Target {
 }
 
 impl Region for Target {
+    #[inline]
+    fn left(&self) -> i32 {
+        (self.point.x - self.size / 2.0) as i32
+    }
+
+    #[inline]
+    fn top(&self) 
