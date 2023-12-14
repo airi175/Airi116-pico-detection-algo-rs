@@ -64,4 +64,13 @@ impl Region for Target {
 
     #[inline]
     fn is_square(&self) -> bool {
-        tr
+        true
+    }
+
+    #[inline]
+    fn center(&self) -> Point2<i32> {
+        Point2::new(self.x() as i32, self.y() as i32)
+    }
+}
+
+impl From
