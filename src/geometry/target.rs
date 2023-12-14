@@ -48,4 +48,13 @@ impl Region for Target {
     }
 
     #[inline]
-    fn top(&self) 
+    fn top(&self) -> i32 {
+        (self.point.y - self.size / 2.0) as i32
+    }
+
+    #[inline]
+    fn width(&self) -> u32 {
+        self.size as u32
+    }
+
+   
