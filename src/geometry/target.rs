@@ -57,4 +57,11 @@ impl Region for Target {
         self.size as u32
     }
 
-   
+    #[inline]
+    fn height(&self) -> u32 {
+        self.size as u32
+    }
+
+    #[inline]
+    fn is_square(&self) -> bool {
+        tr
