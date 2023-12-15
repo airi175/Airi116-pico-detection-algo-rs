@@ -73,4 +73,7 @@ impl Region for Target {
     }
 }
 
-impl From
+impl From<Target> for Rect {
+    #[inline]
+    fn from(value: Target) -> Self {
+        Self::at(value.left(), value.top()).of_size(value.width(), va
