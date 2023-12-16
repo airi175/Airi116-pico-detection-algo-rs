@@ -76,4 +76,11 @@ impl Region for Target {
 impl From<Target> for Rect {
     #[inline]
     fn from(value: Target) -> Self {
-        Self::at(value.left(), value.top()).of_size(value.width(), va
+        Self::at(value.left(), value.top()).of_size(value.width(), value.height())
+    }
+}
+
+impl From<Target> for Square {
+    #[inline]
+    fn from(value: Target) -> Self {
+        Self::new(value.left(
