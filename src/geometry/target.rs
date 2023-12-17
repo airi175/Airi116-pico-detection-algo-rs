@@ -83,4 +83,11 @@ impl From<Target> for Rect {
 impl From<Target> for Square {
     #[inline]
     fn from(value: Target) -> Self {
-        Self::new(value.left(
+        Self::new(value.left(), value.top(), value.size() as u32)
+    }
+}
+
+impl From<Square> for Target {
+    #[inline]
+    fn from(value: Square) -> Self {
+   
