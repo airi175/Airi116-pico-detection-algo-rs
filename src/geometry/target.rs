@@ -90,4 +90,9 @@ impl From<Target> for Square {
 impl From<Square> for Target {
     #[inline]
     fn from(value: Square) -> Self {
-   
+        Self {
+            point: value.center().cast(),
+            size: value.size() as f32,
+        }
+    }
+}
