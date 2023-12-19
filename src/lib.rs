@@ -19,4 +19,8 @@ mod detect;
 mod localize;
 mod shape;
 
-pub use geometry::{Square, Target}
+pub use geometry::{Square, Target};
+
+pub use detect::{
+    clusterize, multiscale, DetectMultiscale, DetectMultiscaleBuilder,
+    DetectMultiscaleBuilderError, Det
