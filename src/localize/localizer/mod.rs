@@ -121,3 +121,55 @@ impl Localizer {
 
                 stage.push((tree, predictions));
             }
+
+            stages.push(stage);
+        }
+
+        Ok(Self {
+            depth,
+            dsize: pred_size,
+            scale,
+            stages,
+        })
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_pupil_localizer_model_loading() {
+        let puploc = dbg!(Localizer::load(
+            include_bytes!("../../../models/pupil.localizer.bin")
+                .to_vec()
+                .as_slice(),
+        )
+        .expect("parsing failed"));
+
+        let stages = &puploc.stages;
+        let trees = stages[0].len();
+
+        assert_eq!(5, stages.len());
+        assert_eq!(20, trees);
+        assert_eq!(10, puploc.depth);
+        assert_eq!(80, (puploc.scale * 100.0) as u32);
+
+        let dsize = 2usize.pow(puploc.depth as u32);
+
+        let first_node = ComparisonNode::from([30i8, -16i8, 125i8, 14i8]);
+        let last_node = ComparisonNode::from([-125i8, 26i8, 15i8, 98i8]);
+        assert_eq!(first_node, stages[0][0].0[0]);
+        assert_eq!(
+            last_node,
+            stages[stages.len() - 1][trees - 1].0[dsize - 1 - 1]
+        );
+
+        let first_pred_test = Vector2::new(-0.08540829f32, 0.04436668f32);
+        let last_pred_test = Vector2::new(0.05820565f32, 0.02249731f32);
+        let first_pred = stages[0][0].1[0];
+        let last_pred = stages[stages.len() - 1][trees - 1].1[dsize - 1];
+        assert_abs_diff_eq!(first_pred_test, first_pred);
+        assert_abs_diff_eq!(last_pred_test, last_pred);
+    }
+}
