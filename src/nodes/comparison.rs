@@ -16,4 +16,10 @@ impl From<[i8; 4]> for ComparisonNode {
 
 impl From<[u8; 4]> for ComparisonNode {
     #[inline]
-    fn fr
+    fn from(data: [u8; 4]) -> Self {
+        data.map(|value| i8::from_le_bytes(value.to_le_bytes()))
+            .into()
+    }
+}
+
+impl From<
