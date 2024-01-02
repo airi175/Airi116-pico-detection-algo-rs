@@ -25,4 +25,11 @@ impl From<[u8; 4]> for ComparisonNode {
 impl From<ComparisonNode> for [i8; 4] {
     #[inline]
     fn from(node: ComparisonNode) -> [i8; 4] {
-        [node.0.y, node.0.x, node
+        [node.0.y, node.0.x, node.1.y, node.1.x]
+    }
+}
+
+impl From<ComparisonNode> for [u8; 4] {
+    #[inline]
+    fn from(node: ComparisonNode) -> [u8; 4] {
+        [
