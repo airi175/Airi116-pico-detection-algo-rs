@@ -33,3 +33,7 @@ impl From<ComparisonNode> for [u8; 4] {
     #[inline]
     fn from(node: ComparisonNode) -> [u8; 4] {
         [
+            node.0.y.to_le_bytes()[0],
+            node.0.x.to_le_bytes()[0],
+            node.1.y.to_le_bytes()[0],
+        
