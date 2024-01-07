@@ -43,4 +43,10 @@ impl From<ComparisonNode> for [u8; 4] {
 
 impl ComparisonNode {
     #[inline]
-    pub fn bintest<I: GenericImageView<Pixel = L
+    pub fn bintest<I: GenericImageView<Pixel = Luma<u8>>>(
+        &self,
+        image: &I,
+        point: Point2<i32>,
+        size: u32,
+    ) -> bool {
+        let p0 =
