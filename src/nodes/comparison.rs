@@ -49,4 +49,7 @@ impl ComparisonNode {
         point: Point2<i32>,
         size: u32,
     ) -> bool {
-        let p0 =
+        let p0 = transform(point, size, self.0.cast());
+        let p1 = transform(point, size, self.1.cast());
+
+        let lum0 = uns
