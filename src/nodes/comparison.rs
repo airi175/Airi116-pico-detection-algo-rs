@@ -52,4 +52,5 @@ impl ComparisonNode {
         let p0 = transform(point, size, self.0.cast());
         let p1 = transform(point, size, self.1.cast());
 
-        let lum0 = uns
+        let lum0 = unsafe { clamp_pixel_unchecked(image, p0.x, p0.y) }.0[0];
+        let lum1 = unsafe { clamp_pixel_unchecked(image, p1.x, p1.y) }.
