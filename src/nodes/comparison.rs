@@ -66,4 +66,9 @@ const SHIFT: i32 = 8;
 #[allow(dead_code)]
 #[inline]
 fn na_transform(i: Point2<i32>, s: u32, n: Point2<i32>) -> Point2<i32> {
-    (i * SCALE + n.coords * (s as i32)) /
+    (i * SCALE + n.coords * (s as i32)) / SCALE
+}
+
+#[inline]
+fn transform(i: Point2<i32>, s: u32, n: Point2<i32>) -> Point2<i32> {
+    let (x, y) = original_transform(i.x, i.y, s as i32
