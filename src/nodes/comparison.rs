@@ -63,4 +63,7 @@ impl ComparisonNode {
 const SCALE: i32 = u8::MAX as i32 + 1;
 const SHIFT: i32 = 8;
 
-#[allow(d
+#[allow(dead_code)]
+#[inline]
+fn na_transform(i: Point2<i32>, s: u32, n: Point2<i32>) -> Point2<i32> {
+    (i * SCALE + n.coords * (s as i32)) /
