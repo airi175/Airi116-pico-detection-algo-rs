@@ -53,4 +53,14 @@ impl ComparisonNode {
         let p1 = transform(point, size, self.1.cast());
 
         let lum0 = unsafe { clamp_pixel_unchecked(image, p0.x, p0.y) }.0[0];
-        let lum1 = unsafe { clamp_pixel_unchecked(image, p1.x, p1.y) }.
+        let lum1 = unsafe { clamp_pixel_unchecked(image, p1.x, p1.y) }.0[0];
+
+        lum0 > lum1
+    }
+}
+
+#[allow(dead_code)]
+const SCALE: i32 = u8::MAX as i32 + 1;
+const SHIFT: i32 = 8;
+
+#[allow(d
