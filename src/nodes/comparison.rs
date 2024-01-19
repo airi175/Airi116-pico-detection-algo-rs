@@ -77,4 +77,10 @@ fn transform(i: Point2<i32>, s: u32, n: Point2<i32>) -> Point2<i32> {
 
 #[allow(dead_code)]
 #[inline]
-fn original_transform(ix: i32, iy: i32, s: i32, nx: i32, ny: i32) ->
+fn original_transform(ix: i32, iy: i32, s: i32, nx: i32, ny: i32) -> (i32, i32) {
+    let x = ((ix << SHIFT) + nx * s) >> SHIFT;
+    let y = ((iy << SHIFT) + ny * s) >> SHIFT;
+    (x, y)
+}
+
+#[cfg(t
