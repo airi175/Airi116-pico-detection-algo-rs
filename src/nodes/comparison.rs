@@ -83,4 +83,12 @@ fn original_transform(ix: i32, iy: i32, s: i32, nx: i32, ny: i32) -> (i32, i32) 
     (x, y)
 }
 
-#[cfg(t
+#[cfg(test)]
+mod tests {
+    use image::{GrayImage, Luma};
+
+    use super::*;
+
+    #[test]
+    fn test_comparison_node_from_into() {
+        let data: [i8; 4]
