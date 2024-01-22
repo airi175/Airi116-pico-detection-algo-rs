@@ -91,4 +91,6 @@ mod tests {
 
     #[test]
     fn test_comparison_node_from_into() {
-        let data: [i8; 4]
+        let data: [i8; 4] = [-128, 42, -34, 127];
+        let buf: [u8; 4] = ComparisonNode::from(data.clone()).into();
+        let out: [i8; 4] = ComparisonNode::from(buf).into();
