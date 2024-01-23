@@ -94,3 +94,10 @@ mod tests {
         let data: [i8; 4] = [-128, 42, -34, 127];
         let buf: [u8; 4] = ComparisonNode::from(data.clone()).into();
         let out: [i8; 4] = ComparisonNode::from(buf).into();
+        assert_eq!(data, out);
+    }
+
+    #[test]
+    fn test_original_transform() {
+        let (ix, iy, s) = (100, 150, 50);
+        
