@@ -106,4 +106,7 @@ mod tests {
 
     #[test]
     fn test_na_transform() {
-  
+        let i = Point2::new(100, 150);
+        let p = Point2::new(42, -34);
+        let s = 50;
+        assert_eq!(na_transform(i, s, p), transf
