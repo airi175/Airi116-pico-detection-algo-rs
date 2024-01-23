@@ -109,4 +109,9 @@ mod tests {
         let i = Point2::new(100, 150);
         let p = Point2::new(42, -34);
         let s = 50;
-        assert_eq!(na_transform(i, s, p), transf
+        assert_eq!(na_transform(i, s, p), transform(i, s, p));
+    }
+
+    #[test]
+    fn test_comparison_node_bintest() {
+        let node = ComparisonNode::from([i8::MAX, i8::MAX
