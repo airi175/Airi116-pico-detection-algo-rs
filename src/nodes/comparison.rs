@@ -100,4 +100,10 @@ mod tests {
     #[test]
     fn test_original_transform() {
         let (ix, iy, s) = (100, 150, 50);
-        
+        let (nx, ny) = (42, -34);
+        assert_eq!(original_transform(ix, iy, s, nx, ny), (108, 143));
+    }
+
+    #[test]
+    fn test_na_transform() {
+  
