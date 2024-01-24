@@ -114,4 +114,8 @@ mod tests {
 
     #[test]
     fn test_comparison_node_bintest() {
-        let node = ComparisonNode::from([i8::MAX, i8::MAX
+        let node = ComparisonNode::from([i8::MAX, i8::MAX, i8::MIN, i8::MIN]);
+
+        let size = 255;
+        let mut image = GrayImage::new(size, size);
+        image.put_pixel(0, 0, L
