@@ -121,4 +121,7 @@ mod tests {
         image.put_pixel(0, 0, Luma::from([42u8]));
         image.put_pixel(size - 1, size - 1, Luma::from([255u8]));
 
-        let point = Point2::new(s
+        let point = Point2::new(size / 2 + 1, size / 2 + 1);
+        assert!(node.bintest(&image, point.cast(), size));
+    }
+}
