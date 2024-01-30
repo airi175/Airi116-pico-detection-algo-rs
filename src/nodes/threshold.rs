@@ -22,4 +22,6 @@ impl From<[u8; 10]> for ThresholdNode {
 
 impl From<ThresholdNode> for [u8; 10] {
     #[inline]
-    fn from(node: ThresholdNode) -> 
+    fn from(node: ThresholdNode) -> Self {
+        let idx0 = (node.idx.0 as u32).to_be_bytes(); // 4 bytes
+        let idx1 = (node.idx.1 as u32).to_be_bytes(); /
