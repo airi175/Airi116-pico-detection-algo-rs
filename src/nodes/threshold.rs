@@ -15,4 +15,11 @@ impl From<[u8; 10]> for ThresholdNode {
         let threshold = i16::from_be_bytes(data[8..10].try_into().unwrap());
         Self {
             idx: (idx0, idx1),
-        
+            threshold,
+        }
+    }
+}
+
+impl From<ThresholdNode> for [u8; 10] {
+    #[inline]
+    fn from(node: ThresholdNode) -> 
