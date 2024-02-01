@@ -32,4 +32,8 @@ impl From<ThresholdNode> for [u8; 10] {
 
         let mut out: [MaybeUninit<u8>; 10] = unsafe { MaybeUninit::uninit().assume_init() };
 
-        for (pos, o) in vals.zip(out.iter_m
+        for (pos, o) in vals.zip(out.iter_mut()) {
+            *unsafe { o.assume_init_mut() } = *pos;
+        }
+
+        unsafe { transmute::<_, [u8; 10]>
