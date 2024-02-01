@@ -30,4 +30,6 @@ impl From<ThresholdNode> for [u8; 10] {
 
         let vals = idx0.iter().chain(idx1.iter()).chain(threshold.iter());
 
-        let mut out: [MaybeUninit<u
+        let mut out: [MaybeUninit<u8>; 10] = unsafe { MaybeUninit::uninit().assume_init() };
+
+        for (pos, o) in vals.zip(out.iter_m
