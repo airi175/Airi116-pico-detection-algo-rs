@@ -26,4 +26,8 @@ impl From<ThresholdNode> for [u8; 10] {
         let idx0 = (node.idx.0 as u32).to_be_bytes(); // 4 bytes
         let idx1 = (node.idx.1 as u32).to_be_bytes(); // 4 bytes
         let threshold = node.threshold.to_be_bytes(); // 2 bytes
-                                               
+                                                      // = 10 bytes
+
+        let vals = idx0.iter().chain(idx1.iter()).chain(threshold.iter());
+
+        let mut out: [MaybeUninit<u
