@@ -36,4 +36,11 @@ impl From<ThresholdNode> for [u8; 10] {
             *unsafe { o.assume_init_mut() } = *pos;
         }
 
-        unsafe { transmute::<_, [u8; 10]>
+        unsafe { transmute::<_, [u8; 10]>(out) }
+    }
+}
+
+impl ThresholdNode {
+    #[inline(always)]
+    fn get_value(features: &[u8], index: usize) -> i16 {
+        (unsafe { *featu
