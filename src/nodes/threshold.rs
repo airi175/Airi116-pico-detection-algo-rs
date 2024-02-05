@@ -43,4 +43,9 @@ impl From<ThresholdNode> for [u8; 10] {
 impl ThresholdNode {
     #[inline(always)]
     fn get_value(features: &[u8], index: usize) -> i16 {
-        (unsafe { *featu
+        (unsafe { *features.get_unchecked(index) }) as i16
+    }
+
+    #[inline]
+    pub fn bintest(&self, features: &[u8]) -> bool {
+  
