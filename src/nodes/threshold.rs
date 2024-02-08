@@ -51,3 +51,13 @@ impl ThresholdNode {
         let diff = Self::get_value(features, self.idx.0) - Self::get_value(features, self.idx.1);
         self.threshold > diff
     }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_threshold_node_from_into() {
+        let test_idx = (1, 2);
+        let tes
