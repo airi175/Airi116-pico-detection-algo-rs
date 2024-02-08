@@ -60,4 +60,9 @@ mod tests {
     #[test]
     fn test_threshold_node_from_into() {
         let test_idx = (1, 2);
-        let tes
+        let test_threshold = 2;
+        let node = ThresholdNode {
+            idx: test_idx,
+            threshold: test_threshold,
+        };
+  
