@@ -65,4 +65,6 @@ mod tests {
             idx: test_idx,
             threshold: test_threshold,
         };
-  
+        let data: [u8; 10] = node.into();
+        let ThresholdNode { idx, threshold } = ThresholdNode::from(data);
+ 
