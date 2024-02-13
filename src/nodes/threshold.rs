@@ -72,4 +72,10 @@ mod tests {
     }
 
     #[test]
-    fn test_threshold_
+    fn test_threshold_node_bintest() {
+        let mut node = ThresholdNode {
+            idx: (0, 1),
+            threshold: 42,
+        };
+
+        assert!(node.binte
