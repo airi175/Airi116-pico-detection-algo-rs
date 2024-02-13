@@ -67,4 +67,9 @@ mod tests {
         };
         let data: [u8; 10] = node.into();
         let ThresholdNode { idx, threshold } = ThresholdNode::from(data);
- 
+        assert_eq!(idx, test_idx);
+        assert_eq!(threshold, test_threshold);
+    }
+
+    #[test]
+    fn test_threshold_
