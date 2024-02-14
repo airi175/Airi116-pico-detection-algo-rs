@@ -82,4 +82,9 @@ mod tests {
         assert!(node.bintest(&[0, 1]));
         assert!(!node.bintest(&[43, 1]));
 
-        node.threshold = -42
+        node.threshold = -42;
+
+        assert!(node.bintest(&[0, 43]));
+        assert!(!node.bintest(&[0, 1]));
+    }
+}
