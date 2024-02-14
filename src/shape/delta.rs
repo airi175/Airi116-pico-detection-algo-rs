@@ -8,4 +8,11 @@ pub struct ShaperDelta {
 
 impl ShaperDelta {
     #[inline]
-    pub fn new(anchor: us
+    pub fn new(anchor: usize, x: f32, y: f32) -> Self {
+        Self {
+            anchor,
+            value: Vector2::new(x, y),
+        }
+    }
+
+    #[inli
