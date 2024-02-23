@@ -15,4 +15,11 @@ impl ShaperDelta {
         }
     }
 
-    #[inli
+    #[inline]
+    pub fn anchor(&self) -> usize {
+        self.anchor
+    }
+
+    #[inline]
+    pub fn value(&self) -> &Vector2<f32> {
+        &self.val
