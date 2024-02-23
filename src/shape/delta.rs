@@ -22,4 +22,6 @@ impl ShaperDelta {
 
     #[inline]
     pub fn value(&self) -> &Vector2<f32> {
-        &self.val
+        &self.value
+    }
+}
