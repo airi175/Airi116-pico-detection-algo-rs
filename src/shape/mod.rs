@@ -139,3 +139,66 @@ impl Shaper {
                 shape.iter_mut().zip(tree.shift(idx).iter()).for_each(
                     |(shape_point, shift_vector)| {
                         *shape_point += shift_vector;
+                    },
+                );
+            }
+        }
+
+        shape
+            .iter_mut()
+            .for_each(|point| *point = transform_to_image * *point);
+
+        shape
+    }
+
+    #[inline]
+    fn find_transform(&self, shape: &[Point2<f32>]) -> SimilarityMatrix2<f32> {
+        unsafe {
+            similarity_least_squares::from_point_slices(
+                self.shape.as_slice(),
+                shape,
+                f32::EPSILON,
+                0,
+            )
+            .unwrap_unchecked()
+        }
+    }
+}
+
+#[inline]
+fn find_transform_to_image(rect: Rect) -> Affine2<f32> {
+    Affine2::from_matrix_unchecked(Matrix3::new(
+        rect.width() as f32,
+        0.0,
+        rect.left() as f32,
+        0.0,
+        rect.height() as f32,
+        rect.top() as f32,
+        0.0,
+        0.0,
+        1.0,
+    ))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_face_landmarks_model_loading() {
+        let shaper = dbg!(Shaper::load(
+            include_bytes!("../../models/face-5.shaper.bin")
+                .to_vec()
+                .as_slice(),
+        )
+        .expect("parsing failed"));
+
+        assert_eq!(shaper.forests.len(), 15);
+        assert_eq!(shaper.forests[0].trees(), 500);
+
+        assert_eq!(shaper.forests[0].tree(0).nodes(), 15);
+        assert_eq!(shaper.forests[0].tree(0).shifts(), 16);
+
+        assert_eq!(shaper.forests[0].deltas(), 800);
+    }
+}
