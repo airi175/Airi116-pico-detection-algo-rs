@@ -67,3 +67,6 @@ impl ShaperTree {
         Ok(Self {
             nodes: Self::load_nodes(reader.by_ref(), nodes)?,
             shifts: Self::load_shifts(reader.by_ref(), shifts, shape)?,
+        })
+    }
+}
