@@ -13,4 +13,8 @@ where
 
     for value in m.iter_mut() {
         reader.read_exact(&mut buf)?;
-        value.write(
+        value.write(f32::from_be_bytes(buf));
+    }
+
+    Ok(unsafe { m.assume_init() })
+}
