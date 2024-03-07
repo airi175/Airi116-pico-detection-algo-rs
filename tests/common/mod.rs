@@ -5,4 +5,10 @@ use std::{
 
 use rstest::fixture;
 
-use image::
+use image::GrayImage;
+use nalgebra::Point2;
+use rand::SeedableRng;
+use rand_xoshiro::Xoroshiro128PlusPlus;
+
+use pico_detect::{
+    clus
