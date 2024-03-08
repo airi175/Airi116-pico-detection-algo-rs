@@ -13,4 +13,12 @@ use rand_xoshiro::Xoroshiro128PlusPlus;
 use pico_detect::{
     clusterize::Clusterizer, multiscale::Multiscaler, DetectMultiscale, Detector,
     Localizer, Padding, Shaper, Square, Target, LocalizePerturbate,
+};
+
+#[fixture]
+pub fn test_image_path() -> PathBuf {
+    "./assets/test.png".into()
 }
+
+#[fixture]
+pub
