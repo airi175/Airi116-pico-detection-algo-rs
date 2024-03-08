@@ -21,4 +21,9 @@ pub fn test_image_path() -> PathBuf {
 }
 
 #[fixture]
-pub
+pub fn detector_path() -> PathBuf {
+    "./models/face.detector.bin".into()
+}
+
+#[fixture]
+pub fn loca
