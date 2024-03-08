@@ -11,4 +11,6 @@ use rand::SeedableRng;
 use rand_xoshiro::Xoroshiro128PlusPlus;
 
 use pico_detect::{
-    clus
+    clusterize::Clusterizer, multiscale::Multiscaler, DetectMultiscale, Detector,
+    Localizer, Padding, Shaper, Square, Target, LocalizePerturbate,
+}
