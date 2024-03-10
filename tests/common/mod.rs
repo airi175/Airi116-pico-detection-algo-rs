@@ -26,4 +26,9 @@ pub fn detector_path() -> PathBuf {
 }
 
 #[fixture]
-pub fn loca
+pub fn localizer_path() -> PathBuf {
+    "./models/pupil.localizer.bin".into()
+}
+
+#[fixture]
+pub fn shaper_path() -> PathB
