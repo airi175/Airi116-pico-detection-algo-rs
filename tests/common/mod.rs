@@ -31,4 +31,10 @@ pub fn localizer_path() -> PathBuf {
 }
 
 #[fixture]
-pub fn shaper_path() -> PathB
+pub fn shaper_path() -> PathBuf {
+    "./models/face-5.shaper.bin".into()
+}
+
+#[fixture]
+pub fn test_image(test_image_path: PathBuf) -> image::GrayImage {
+    image::op
