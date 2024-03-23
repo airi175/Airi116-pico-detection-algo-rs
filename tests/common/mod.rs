@@ -37,4 +37,9 @@ pub fn shaper_path() -> PathBuf {
 
 #[fixture]
 pub fn test_image(test_image_path: PathBuf) -> image::GrayImage {
-    image::op
+    image::open(test_image_path).unwrap().to_luma8()
+}
+
+#[fixture]
+pub fn detector(detector_path: PathBuf) -> Detector {
+    Detector::load(fil
