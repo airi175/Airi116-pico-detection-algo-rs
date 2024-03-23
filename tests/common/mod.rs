@@ -42,4 +42,9 @@ pub fn test_image(test_image_path: PathBuf) -> image::GrayImage {
 
 #[fixture]
 pub fn detector(detector_path: PathBuf) -> Detector {
-    Detector::load(fil
+    Detector::load(file(detector_path)).unwrap()
+}
+
+#[fixture]
+pub fn localizer(localizer_path: PathBuf) -> Localizer {
+    Localizer::load(file(lo
