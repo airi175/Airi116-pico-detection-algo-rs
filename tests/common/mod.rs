@@ -47,4 +47,9 @@ pub fn detector(detector_path: PathBuf) -> Detector {
 
 #[fixture]
 pub fn localizer(localizer_path: PathBuf) -> Localizer {
-    Localizer::load(file(lo
+    Localizer::load(file(localizer_path)).unwrap()
+}
+
+#[fixture]
+pub fn shaper(shaper_path: PathBuf) -> Shaper {
+    Shaper::load(file(shaper_path)).unwrap
