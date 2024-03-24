@@ -52,4 +52,10 @@ pub fn localizer(localizer_path: PathBuf) -> Localizer {
 
 #[fixture]
 pub fn shaper(shaper_path: PathBuf) -> Shaper {
-    Shaper::load(file(shaper_path)).unwrap
+    Shaper::load(file(shaper_path)).unwrap()
+}
+
+#[fixture]
+pub fn classify_case(test_image: GrayImage) -> (GrayImage, Square, Option<f32>) {
+    (
+        t
