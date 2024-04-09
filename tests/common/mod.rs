@@ -65,4 +65,9 @@ pub fn classify_case(test_image: GrayImage) -> (GrayImage, Square, Option<f32>) 
 }
 
 #[fixture]
-pub fn localize_case(test_image: GrayIma
+pub fn localize_case(test_image: GrayImage) -> (GrayImage, [(Square, Point2<f32>); 2]) {
+    (
+        test_image,
+        [
+            (
+                Square::at(321, 259)
