@@ -82,4 +82,7 @@ pub fn localize_case(test_image: GrayImage) -> (GrayImage, [(Square, Point2<f32>
 }
 
 #[fixture]
-pub fn shaper_case(test_im
+pub fn shaper_case(test_image: GrayImage) -> (GrayImage, Square, Vec<Point2<f32>>) {
+    (
+        test_image,
+        Square::at(213, 225).of_si
