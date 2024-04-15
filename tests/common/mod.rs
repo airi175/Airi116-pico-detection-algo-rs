@@ -117,4 +117,8 @@ pub fn padding() -> Padding {
 #[fixture]
 pub fn detect_multiscale(
     multiscaler: Multiscaler,
-    clu
+    clusterizer: Clusterizer,
+    padding: Padding,
+) -> DetectMultiscale {
+    DetectMultiscale::builder()
+        .multisca
