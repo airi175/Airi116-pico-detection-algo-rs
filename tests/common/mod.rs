@@ -102,4 +102,11 @@ pub fn multiscaler(test_image: GrayImage) -> Multiscaler {
 }
 
 #[fixture]
-pub fn cl
+pub fn clusterizer() -> Clusterizer {
+    Clusterizer {
+        intersection_threshold: 0.2,
+        score_threshold: 30.0,
+    }
+}
+
+#[fixture]
