@@ -110,3 +110,11 @@ pub fn clusterizer() -> Clusterizer {
 }
 
 #[fixture]
+pub fn padding() -> Padding {
+    Default::default()
+}
+
+#[fixture]
+pub fn detect_multiscale(
+    multiscaler: Multiscaler,
+    clu
