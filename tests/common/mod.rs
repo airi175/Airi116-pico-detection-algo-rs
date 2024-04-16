@@ -133,4 +133,10 @@ pub fn localize_perturbate() -> LocalizePerturbate {
     LocalizePerturbate::new(31)
 }
 
-#
+#[fixture]
+pub fn rng() -> Xoroshiro128PlusPlus {
+    Xoroshiro128PlusPlus::seed_from_u64(42)
+}
+
+#[fixture]
+pub fn localize_
