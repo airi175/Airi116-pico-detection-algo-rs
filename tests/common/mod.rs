@@ -121,4 +121,8 @@ pub fn detect_multiscale(
     padding: Padding,
 ) -> DetectMultiscale {
     DetectMultiscale::builder()
-        .multisca
+        .multiscaler(multiscaler)
+        .clusterizer(clusterizer)
+        .padding(padding)
+        .build()
+    
