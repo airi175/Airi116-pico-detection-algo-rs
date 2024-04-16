@@ -125,4 +125,12 @@ pub fn detect_multiscale(
         .clusterizer(clusterizer)
         .padding(padding)
         .build()
-    
+        .unwrap()
+}
+
+#[fixture]
+pub fn localize_perturbate() -> LocalizePerturbate {
+    LocalizePerturbate::new(31)
+}
+
+#
