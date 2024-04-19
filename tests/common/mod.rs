@@ -139,4 +139,9 @@ pub fn rng() -> Xoroshiro128PlusPlus {
 }
 
 #[fixture]
-pub fn localize_
+pub fn localize_perturbate_case(test_image: GrayImage) -> (GrayImage, [(Square, Point2<f32>); 2]) {
+    (
+        test_image,
+        [
+            (
+       
