@@ -144,4 +144,7 @@ pub fn localize_perturbate_case(test_image: GrayImage) -> (GrayImage, [(Square, 
         test_image,
         [
             (
-       
+                Square::at(300, 244).of_size(38),
+                Point2::new(328.6757, 265.8514),
+            ),
+         
