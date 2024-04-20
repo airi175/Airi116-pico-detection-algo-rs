@@ -163,4 +163,6 @@ pub fn detect_multiscale_case(test_image: GrayImage) -> (GrayImage, Vec<(Target,
     )
 }
 
-pub fn file<P: AsRef<Path>>(path: P)
+pub fn file<P: AsRef<Path>>(path: P) -> BufReader<File> {
+    BufReader::new(File::open(path).unwrap())
+}
