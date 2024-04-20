@@ -155,4 +155,7 @@ pub fn localize_perturbate_case(test_image: GrayImage) -> (GrayImage, [(Square, 
     )
 }
 
-#[fix
+#[fixture]
+pub fn detect_multiscale_case(test_image: GrayImage) -> (GrayImage, Vec<(Target, f32)>) {
+    (
+        test_im
