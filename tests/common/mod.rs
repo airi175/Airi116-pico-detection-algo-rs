@@ -158,4 +158,9 @@ pub fn localize_perturbate_case(test_image: GrayImage) -> (GrayImage, [(Square, 
 #[fixture]
 pub fn detect_multiscale_case(test_image: GrayImage) -> (GrayImage, Vec<(Target, f32)>) {
     (
-        test_im
+        test_image,
+        vec![(Target::new(289.7143, 302.0000, 154.5714), 38.2221)],
+    )
+}
+
+pub fn file<P: AsRef<Path>>(path: P)
