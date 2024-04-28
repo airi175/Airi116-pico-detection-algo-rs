@@ -22,4 +22,8 @@ fn test_detect_multiscale(
 ) {
     let (image, detections) = detect_multiscale_case;
 
-    for 
+    for (detection, (target, score)) in detect_multiscale
+        .run(&detector, &image)
+        .iter()
+        .zip(detections.iter())
+    {
