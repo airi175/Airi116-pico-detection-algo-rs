@@ -17,4 +17,9 @@ fn test_detector_classify(detector: Detector, classify_case: (GrayImage, Square,
 #[rstest]
 fn test_detect_multiscale(
     detect_multiscale: DetectMultiscale,
-    detector
+    detector: Detector,
+    detect_multiscale_case: (GrayImage, Vec<(Target, f32)>),
+) {
+    let (image, detections) = detect_multiscale_case;
+
+    for 
