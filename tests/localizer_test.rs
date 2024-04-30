@@ -8,4 +8,9 @@ use nalgebra::Point2;
 
 use common::{localize_case, localize_perturbate_case, localizer, localize_perturbate, rng};
 
-use pico_detect::{Localizer, Square, LocalizePertur
+use pico_detect::{Localizer, Square, LocalizePerturbate};
+
+#[rstest]
+fn test_localizer_localize(
+    localizer: Localizer,
+    localize_case: (GrayImage, [(Squar
