@@ -19,4 +19,12 @@ fn test_localizer_localize(
 
     for (region, point) in tests.iter() {
         assert_abs_diff_eq!(
-       
+            localizer.localize(&image, region.to_owned().into()),
+            point,
+            epsilon = 1e-4
+        );
+    }
+}
+
+#[rstest]
+fn 
