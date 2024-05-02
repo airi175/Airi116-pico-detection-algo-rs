@@ -30,4 +30,7 @@ fn test_localizer_localize(
 fn test_localize_perturbate_run(
     localizer: Localizer,
     mut rng: rand_xoshiro::Xoroshiro128PlusPlus,
- 
+    localize_perturbate: LocalizePerturbate,
+    localize_perturbate_case: (GrayImage, [(Square, Point2<f32>); 2]),
+) {
+    let (image,
