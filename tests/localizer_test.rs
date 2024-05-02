@@ -27,4 +27,7 @@ fn test_localizer_localize(
 }
 
 #[rstest]
-fn 
+fn test_localize_perturbate_run(
+    localizer: Localizer,
+    mut rng: rand_xoshiro::Xoroshiro128PlusPlus,
+ 
