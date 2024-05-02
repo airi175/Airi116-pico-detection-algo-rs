@@ -33,4 +33,8 @@ fn test_localize_perturbate_run(
     localize_perturbate: LocalizePerturbate,
     localize_perturbate_case: (GrayImage, [(Square, Point2<f32>); 2]),
 ) {
-    let (image,
+    let (image, tests) = localize_perturbate_case;
+
+    for (region, point) in tests.iter() {
+        assert_abs_diff_eq!(
+            localize_p
