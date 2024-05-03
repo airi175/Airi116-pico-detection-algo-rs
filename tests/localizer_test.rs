@@ -37,4 +37,9 @@ fn test_localize_perturbate_run(
 
     for (region, point) in tests.iter() {
         assert_abs_diff_eq!(
-            localize_p
+            localize_perturbate.run(&localizer, &mut rng, &image, region.to_owned().into()),
+            point,
+            epsilon = 1.0
+        );
+    }
+}
