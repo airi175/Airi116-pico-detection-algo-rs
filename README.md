@@ -12,4 +12,6 @@ This library is a reimplementation of _Pixel Intensity Comparison-based Object_ 
 
 ## Example
 
-To run CLI example, which takes an imag
+To run CLI example, which takes an image, finds all faces, detects some landmarks and pupils:
+
+> **NOTE**: [Git LFS](https://git-lfs.github.com/) is needed to resolve binary 
