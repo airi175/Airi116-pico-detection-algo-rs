@@ -21,4 +21,8 @@ To run CLI example, which takes an image, finds all faces, detects some landmark
 > and put them under [`models/`](./models) directory.
 
 ```sh
-cargo run --release --example detect-faces --
+cargo run --release --example detect-faces -- --models-dir models -i "assets/test.png" --score 35.0 -o result.png
+```
+
+Output image `result.png` should be like this:
+
