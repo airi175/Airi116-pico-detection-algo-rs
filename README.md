@@ -14,4 +14,7 @@ This library is a reimplementation of _Pixel Intensity Comparison-based Object_ 
 
 To run CLI example, which takes an image, finds all faces, detects some landmarks and pupils:
 
-> **NOTE**: [Git LFS](https://git-lfs.github.com/) is needed to resolve binary 
+> **NOTE**: [Git LFS](https://git-lfs.github.com/) is needed to resolve binary files with `git clone`.
+>
+> If you don't want to use Git LFS you can download models (and test image) direct from this repo
+> (see **mode
