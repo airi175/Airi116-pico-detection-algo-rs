@@ -26,3 +26,8 @@ cargo run --release --example detect-faces -- --models-dir models -i "assets/tes
 
 Output image `result.png` should be like this:
 
+![visualization example](./assets/result.png)
+
+## Models
+
+Each algorithm requires to be loaded with correspondent 
