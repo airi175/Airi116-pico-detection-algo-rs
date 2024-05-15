@@ -33,4 +33,5 @@ Output image `result.png` should be like this:
 Each algorithm requires to be loaded with correspondent binary model.
 
 | model                     | algorithm   | source                             | Description               |
-|--------------------
+|---------------------------|-------------|------------------------------------|---------------------------|
+| [face.detector.bin]       | `Detector`  
