@@ -34,4 +34,5 @@ Each algorithm requires to be loaded with correspondent binary model.
 
 | model                     | algorithm   | source                             | Description               |
 |---------------------------|-------------|------------------------------------|---------------------------|
-| [face.detector.bin]       | `Detector`  
+| [face.detector.bin]       | `Detector`  | [pico]                             | Human face classifier     |
+| [pupil.localizer.bin]     | `Localizer` | [puploc]                
