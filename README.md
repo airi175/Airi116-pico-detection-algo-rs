@@ -30,4 +30,7 @@ Output image `result.png` should be like this:
 
 ## Models
 
-Each algorithm requires to be loaded with correspondent 
+Each algorithm requires to be loaded with correspondent binary model.
+
+| model                     | algorithm   | source                             | Description               |
+|--------------------
