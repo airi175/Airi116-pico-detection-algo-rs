@@ -35,4 +35,5 @@ Each algorithm requires to be loaded with correspondent binary model.
 | model                     | algorithm   | source                             | Description               |
 |---------------------------|-------------|------------------------------------|---------------------------|
 | [face.detector.bin]       | `Detector`  | [pico]                             | Human face classifier     |
-| [pupil.localizer.bin]     | `Localizer` | [puploc]                
+| [pupil.localizer.bin]     | `Localizer` | [puploc]                           | Human eye pupil localizer |
+| [face-5.shaper.bin]       | `Shaper`    | [shape_predictor_5_face_landmarks] | Human
