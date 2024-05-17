@@ -40,4 +40,6 @@ Each algorithm requires to be loaded with correspondent binary model.
 
 ## References
 
-1. [N. Markus, M. Frljak, I. S. Pandzic, J. Ahlberg and R. Forchheimer, "Object Detection with Pi
+1. [N. Markus, M. Frljak, I. S. Pandzic, J. Ahlberg and R. Forchheimer, "Object Detection with Pixel Intensity Comparisons Organized in Decision Trees"](http://arxiv.org/abs/1305.4537)
+
+2. [Eye pupil localization with an ensemble of rand
