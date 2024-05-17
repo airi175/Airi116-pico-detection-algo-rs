@@ -42,4 +42,6 @@ Each algorithm requires to be loaded with correspondent binary model.
 
 1. [N. Markus, M. Frljak, I. S. Pandzic, J. Ahlberg and R. Forchheimer, "Object Detection with Pixel Intensity Comparisons Organized in Decision Trees"](http://arxiv.org/abs/1305.4537)
 
-2. [Eye pupil localization with an ensemble of rand
+2. [Eye pupil localization with an ensemble of randomized trees](https://across.fer.hr/_download/repository/PR4885.pdf)
+
+3. [One Millisecond Face Alignment with an Ensemble of Regression Trees](https://www.c
