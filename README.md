@@ -36,4 +36,8 @@ Each algorithm requires to be loaded with correspondent binary model.
 |---------------------------|-------------|------------------------------------|---------------------------|
 | [face.detector.bin]       | `Detector`  | [pico]                             | Human face classifier     |
 | [pupil.localizer.bin]     | `Localizer` | [puploc]                           | Human eye pupil localizer |
-| [face-5.shaper.bin]       | `Shaper`    | [shape_predictor_5_face_landmarks] | Human
+| [face-5.shaper.bin]       | `Shaper`    | [shape_predictor_5_face_landmarks] | Human 5 face landmarks    |
+
+## References
+
+1. [N. Markus, M. Frljak, I. S. Pandzic, J. Ahlberg and R. Forchheimer, "Object Detection with Pi
