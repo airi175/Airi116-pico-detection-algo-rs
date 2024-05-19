@@ -48,4 +48,6 @@ Each algorithm requires to be loaded with correspondent binary model.
 
 [crates]: https://crates.io/crates/Airi116-pico-detection-algo-rs
 [docs]: https://docs.rs/Airi116-pico-detection-algo-rs
-[docs-badge]: https://docs.rs/Airi116-pico-detec
+[docs-badge]: https://docs.rs/Airi116-pico-detection-algo-rs/badge.svg
+[crates-badge]: https://img.shields.io/crates/v/Airi116-pico-detection-algo-rs
+[license-badge]: https://img.sh
