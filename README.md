@@ -50,4 +50,8 @@ Each algorithm requires to be loaded with correspondent binary model.
 [docs]: https://docs.rs/Airi116-pico-detection-algo-rs
 [docs-badge]: https://docs.rs/Airi116-pico-detection-algo-rs/badge.svg
 [crates-badge]: https://img.shields.io/crates/v/Airi116-pico-detection-algo-rs
-[license-badge]: https://img.sh
+[license-badge]: https://img.shields.io/crates/l/Airi116-pico-detection-algo-rs
+
+[pico]: https://github.com/nenadmarkus/pico
+
+[face.detector.bin]: https://githu
