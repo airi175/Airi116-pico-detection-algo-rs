@@ -54,4 +54,5 @@ Each algorithm requires to be loaded with correspondent binary model.
 
 [pico]: https://github.com/nenadmarkus/pico
 
-[face.detector.bin]: https://githu
+[face.detector.bin]: https://github.com/Airi116/Airi116-pico-detection-algo-rs/raw/master/models/face.detector.bin
+[pupil.localizer.bin]: https://github.com/Ai
